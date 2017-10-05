@@ -2,6 +2,11 @@ package com.dsq.gui.graphics;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Enumeration;
 
 /**
  * Created by DELL on 2017/7/6.
@@ -19,7 +24,7 @@ public class JTreeDemo {
         node2.add(new DefaultMutableTreeNode(new User("小雯")));
         node2.add(new DefaultMutableTreeNode(new User("小夏")));
 
-        DefaultMutableTreeNode top = new DefaultMutableTreeNode(new User("职员管理"));
+        DefaultMutableTreeNode top = new DefaultMutableTreeNode("职员管理");
 
         top.add(new DefaultMutableTreeNode(new User("总经理")));
         top.add(node1);
@@ -29,7 +34,7 @@ public class JTreeDemo {
         JFrame f = new JFrame("JTreeDemo");
         f.add(tree);
         f.setSize(300, 300);
-        f.setVisible(true);
+
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         tree.addTreeSelectionListener(e -> {
@@ -41,6 +46,29 @@ public class JTreeDemo {
                System.out.println("你选择了： " + user.toString());
            }
         });
+
+        JPanel buttonPanel = new JPanel();
+        JButton expandButton = new JButton("展开");
+        expandButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Enumeration enumeration = top.preorderEnumeration();
+                while(enumeration.hasMoreElements()){
+                    DefaultMutableTreeNode node = (DefaultMutableTreeNode) enumeration.nextElement();
+                    tree.expandPath(new TreePath(node.getPath()));
+                }
+            }
+        });
+        JButton closeButton = new JButton("关闭");
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+        buttonPanel.add(expandButton);
+        buttonPanel.add(closeButton);
+        f.add(buttonPanel, BorderLayout.SOUTH);
+        f.setVisible(true);
     }
 }
 

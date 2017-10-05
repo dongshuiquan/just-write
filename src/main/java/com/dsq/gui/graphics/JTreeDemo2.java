@@ -38,15 +38,18 @@ public class JTreeDemo2 extends JFrame {
 
         DefaultTreeModel treeModel = new DefaultTreeModel(root, true);
         JTree tree = new JTree(treeModel);
+        System.out.println(tree.getVisibleRowCount());
+        tree.setVisibleRowCount(2);
+        System.out.println(tree.getVisibleRowCount());
 
         Container container = getContentPane();
         container.add(tree, BorderLayout.CENTER);
 
-        Enumeration enumeration = root.preorderEnumeration();
-       /* while(enumeration.hasMoreElements()){
-            DefaultMutableTreeNode node = (DefaultMutableTreeNode) enumeration.nextElement();
-            tree.expandPath(new TreePath(node.getPath()));
-        }*/
+//        Enumeration enumeration = root.preorderEnumeration();
+//        while(enumeration.hasMoreElements()){
+//            DefaultMutableTreeNode node = (DefaultMutableTreeNode) enumeration.nextElement();
+//            tree.expandPath(new TreePath(node.getPath()));
+//        }
 
         JPanel panel = new JPanel((new GridLayout(1, 5, 10, 10)));
         container.add(panel, BorderLayout.SOUTH);
@@ -74,8 +77,9 @@ public class JTreeDemo2 extends JFrame {
         });
 
         modButton.addActionListener( e -> {
-            TreePath path = tree.getSelectionPath();
-            DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
+//            TreePath path = tree.getSelectionPath();
+//            DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode)tree.getLastSelectedPathComponent();
             node.setUserObject(textField.getText());
             treeModel.nodeChanged(node);
         });

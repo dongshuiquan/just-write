@@ -1,6 +1,5 @@
 package com.dsq.java.lang;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import org.junit.Test;
 
 import java.util.stream.Stream;
