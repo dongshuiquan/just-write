@@ -36,7 +36,7 @@ public class DefaultTableModelTest
 				model.setValueAt("老单元格值 " + i + " " + j , i , j);
 			}
 		}
-		table = new JTable(model);
+		table = new JTable( model);
 		mainWin.add(new JScrollPane(table), BorderLayout.CENTER);
 		// 为窗口安装菜单
 		JMenuBar menuBar = new JMenuBar();
