@@ -1,4 +1,4 @@
-package com.dsq.guava.StringProcess;
+package com.dsq.guava.guava.StringProcess;
 
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Joiner;

@@ -1,0 +1,21 @@
+hello
+
+explain plan for
+
+select * from SL_HFPLM_ProductType where id in( 
+	with tmp as( 
+	select a.*  
+	from SL_HFPLM_ProductType a full join SL_HFPLM_ProductName b on a.productName_id = b.id   
+	start with  b.createGroups  like '%dba%'  
+	connect by prior a.parenttype_id = a.id )
+	
+	select id from (
+				select c.id  
+				from SL_HFPLM_ProductType c full join tmp  on c.id = tmp.id   
+				start with  tmp.name  like '%d2%'  
+				connect by prior c.parenttype_id = c.id		
+			 
+	) where PARENTTYPE_ID is null 
+) ;
+
+select * from table(dbms_xplan.display);

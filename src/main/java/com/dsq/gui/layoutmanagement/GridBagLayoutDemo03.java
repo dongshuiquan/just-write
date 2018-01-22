@@ -22,8 +22,8 @@ public class GridBagLayoutDemo03 extends JFrame{
           //textField.
           this.button = new JButton("确定");
           add(new JLabel("  "), new GBC(0, 0));
-          add(label, new GBC(0, 1).setAnchor(GBC.EAST).setInsets(1).setWeight(100, 0).setFill(GBC.BOTH));
-          add(textField, new GBC(1, 1).setAnchor(GBC.WEST).setInsets(1).setWeight(100, 100).setFill(GBC.HORIZONTAL));
+          add(label, new GBC(0, 1).setAnchor(GBC.WEST).setInsets(1).setWeight(100, 0).setFill(GBC.BOTH));
+          add(textField, new GBC(1, 1).setAnchor(GBC.EAST).setInsets(1).setWeight(100, 100).setFill(GBC.HORIZONTAL));
           add(button, new GBC(0, 2, 2, 1).setAnchor(GBC.CENTER).setWeight(100, 100));
 
           setSize(300, 130);

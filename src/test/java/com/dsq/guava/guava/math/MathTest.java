@@ -1,6 +1,5 @@
-package com.dsq.guava.math;
+package com.dsq.guava.guava.math;
 
-import com.google.common.math.BigIntegerMath;
 import com.google.common.math.IntMath;
 import com.google.common.math.LongMath;
 import org.junit.Assert;

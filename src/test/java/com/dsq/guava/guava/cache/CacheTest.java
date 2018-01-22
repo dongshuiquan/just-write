@@ -1,9 +1,9 @@
-package com.dsq.guava.cache;
+package com.dsq.guava.guava.cache;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import com.google.common.graph.Graph;
+import com.sun.corba.se.impl.orbutil.graph.Graph;
 import org.junit.Test;
 
 import java.security.Key;

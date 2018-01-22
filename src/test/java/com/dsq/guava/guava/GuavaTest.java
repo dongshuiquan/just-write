@@ -1,4 +1,4 @@
-package com.dsq.guava;
+package com.dsq.guava.guava;
 
 import com.google.common.base.Optional;
 import com.google.common.math.DoubleMath;
