@@ -43,6 +43,8 @@ public class SelectJTree
             eventTxt.append("新选中的节点路径："
                     + e.getNewLeadSelectionPath().toString() + "\n");
         });
+        TreePath treePath = new TreePath(new Object[]{root, guangdong, foshan});
+        tree.setSelectionPath(treePath);
         //设置是否显示根节点的“展开/折叠”图标,默认是false
         tree.setShowsRootHandles(true);
         //设置根节点是否可见,默认是true
