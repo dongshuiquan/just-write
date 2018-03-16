@@ -15,6 +15,12 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.ZooDefs.Ids;
 
+
+
+/**
+ * 使用异步方式于同步方式的区别在于节点的创建过程（包括网络通信和服务端的节点创建过程）是异步的，在同步接口调用过程中，
+ * 开发者需要关注接口抛出异常的可能，但是在异步接口中，接口本身不会抛出异常，所有异常都会在回调函数中通过Result Code来体现。
+ */
 public class Zookeeper_Create_API_ASync_Usage implements Watcher {
     private static CountDownLatch connectedSemaphore = new CountDownLatch(1);
 

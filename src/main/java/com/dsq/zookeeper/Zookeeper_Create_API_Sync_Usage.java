@@ -9,6 +9,11 @@ import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 
+/**
+ * 创建节点有异步和同步两种方式。无论是异步或者同步，Zookeeper都不支持递归调用，即无法在父节点不存在的情况下创建一个子节点，
+ * 如在/zk-ephemeral节点不存在的情况下创建/zk-ephemeral/ch1节点；并且如果一个节点已经存在，那么创建同名节点时，
+ * 会抛出NodeExistsException异常。
+ */
 public class Zookeeper_Create_API_Sync_Usage implements Watcher {
     private static CountDownLatch connectedSemaphore = new CountDownLatch(1);
 
