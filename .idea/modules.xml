@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/justwriteit.iml" filepath="$PROJECT_DIR$/justwriteit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservice-client/webservice-client.iml" filepath="$PROJECT_DIR$/webservice-client/webservice-client.iml" />
     </modules>
   </component>
 </project>
