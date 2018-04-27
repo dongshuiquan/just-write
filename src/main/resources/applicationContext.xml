@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id ="userService" class="com.dsq.spring.UserServiceImpl"/>
+
+    <bean id="beforeAdvice" class="com.dsq.spring.AopAdvice"></bean>
+
+    <bean id="userServiceAop" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>com.dsq.spring.UserService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>beforeAdvisor</value>
+            </list>
+        </property>
+        <property name="target">
+            <ref bean="userService"/>
+        </property>
+    </bean>
+
+    <bean id="pointCut" class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+        <property name="pattern" value=".*hello"/>
+    </bean>
+
+    <bean id="beforeAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="advice" ref="beforeAdvice" />
+        <property name="pointcut" ref="pointCut" />
+    </bean>
+</beans>
