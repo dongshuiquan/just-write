@@ -30,9 +30,10 @@ public class HelloServiceImpl extends UnicastRemoteObject
         List<A> as = new ArrayList<A>();
         A a1 = new A();
         a1.setName("a1");
-        as.add(a1);
         A a2 = new A();
         a2.setName("a2");
+        as.add(a1);
+        as.add(a2);
         a.setAs(as);
         System.out.println(a);
         return a;

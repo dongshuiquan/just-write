@@ -1,0 +1,2 @@
+http\://www.ares-remoting.com/schema/ares-service=com.dsq.spring.customtag.MyNameSpaceHandler
+http\://www.dongshuiquan.com/schema/user=com.dsq.spring.customtag.MyNameSpaceHandler

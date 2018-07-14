@@ -11,11 +11,10 @@ import java.util.List;
  */
 public class Client {
     public static void main(String[] args) {
-        String url = "rmi://192.168.191.3:1099/";
+        String url = "rmi://localhost:1099/";
         try {
             Context namingContext = new InitialContext();
-            HelloService serv = (HelloService) namingContext.lookup(
-                    url + "HelloService1");
+            HelloService serv = (HelloService) namingContext.lookup(url + "HelloService1");
             String data = "This is RMI Client.";
             System.out.println(serv.service(data));
 
