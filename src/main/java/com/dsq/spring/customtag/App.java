@@ -10,7 +10,7 @@ public class App {
 
     @Test
     public void testCustomTag() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:com/dsq/spring/customtag/user.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:aop/dsq/spring/customtag/user.xml");
         User user = context.getBean(User.class);
         System.out.println(user);
     }
