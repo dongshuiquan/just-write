@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/justwriteit.iml" filepath="$PROJECT_DIR$/justwriteit.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple_tomcat/simple_tomcat.iml" filepath="$PROJECT_DIR$/simple_tomcat/simple_tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/springmvc/springmvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/webservice-client/webservice-client.iml" filepath="$PROJECT_DIR$/webservice-client/webservice-client.iml" />
     </modules>
   </component>

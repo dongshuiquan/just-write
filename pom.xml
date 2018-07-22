@@ -10,10 +10,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>simple_tomcat</module>
+        <module>springmvc</module>
     </modules>
 
     <properties>
-        <spring.version>4.2.5.RELEASE</spring.version>
+        <spring.version>4.1.5.RELEASE</spring.version>
     </properties>
 
     <build>
@@ -147,6 +148,17 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
