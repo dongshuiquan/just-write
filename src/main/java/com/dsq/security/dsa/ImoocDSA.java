@@ -17,7 +17,7 @@ import java.security.spec.X509EncodedKeySpec;
 public class ImoocDSA {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    private String src = "imooc security dsa";
+    private String src = "24002";
 
     @Test
     public void jdkDSA(){

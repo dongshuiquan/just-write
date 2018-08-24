@@ -15,7 +15,7 @@ import java.security.SecureRandom;
  * Created by DELL on 2017/7/10.
  */
 public class ImoocPBE {
-    private String src = "imooc security pbe";
+    private String src = "24002";
     @Test
     public void jdkPBE(){
         //初始化盐

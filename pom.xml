@@ -11,6 +11,7 @@
     <modules>
         <module>simple_tomcat</module>
         <module>springmvc</module>
+        <module>mybaits</module>
     </modules>
 
     <properties>

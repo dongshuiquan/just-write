@@ -15,7 +15,7 @@ import java.security.spec.X509EncodedKeySpec;
  */
 public class ImoocRSA {
 
-    private String src = "imooc security rsa";
+    private String src = "24002";
     @Test
     public void jdkRSA(){
         try {

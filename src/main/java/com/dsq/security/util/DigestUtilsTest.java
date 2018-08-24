@@ -14,7 +14,7 @@ public class DigestUtilsTest {
 
     @Test
     public void md5Test() {
-        String str = "MD5消息摘要";
+        String str = "24002";
         String md5Hex = DigestUtils.md5Hex(str);
         System.out.println("加密后 : " + md5Hex);
     }

@@ -21,7 +21,7 @@ import java.security.Security;
 public class ImoocSHA {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    private String src = "imooc security SHA";
+    private String src = "24002";
 
     @Test
     public void jdkSHA1() {

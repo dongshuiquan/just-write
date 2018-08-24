@@ -16,7 +16,7 @@ import java.util.Base64;
  * Created by DELL on 2017/7/10.
  */
 public class ImoocAES {
-    private String src = "imooc security aes";
+    private String src = "24002";
     @Test
     public void jdkAES(){
         try {

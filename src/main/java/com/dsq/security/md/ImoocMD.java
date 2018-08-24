@@ -19,7 +19,7 @@ import java.security.Security;
  */
 public class ImoocMD {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    private String src = "i";
+    private String src = "24002";
     @Test
     public void jdkMD5(){
         try {

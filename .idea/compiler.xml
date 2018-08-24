@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mybaits" />
         <module name="simple_tomcat" />
         <module name="springmvc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="justwriteit" target="1.8" />
+      <module name="mybaits" target="1.8" />
       <module name="simple_tomcat" target="1.8" />
       <module name="springmvc" target="1.8" />
     </bytecodeTargetLevel>

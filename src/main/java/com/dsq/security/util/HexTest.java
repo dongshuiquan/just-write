@@ -11,7 +11,7 @@ public class HexTest {
 
     @Test
     public void bcHex() {
-        String str = "Hex 编码";
+        String str = "24002";
         byte[] input = str.getBytes();
         byte[] data = Hex.encode(input);
         System.out.println("编码后 ：" + new String(data));

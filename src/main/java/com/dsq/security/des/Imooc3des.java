@@ -15,7 +15,7 @@ import java.security.Key;
  * Created by DELL on 2017/7/10.
  */
 public class Imooc3des {
-    private String src = "imooc security 3des";
+    private String src = "24002";
 
     @Test
     public void jdk3DES(){

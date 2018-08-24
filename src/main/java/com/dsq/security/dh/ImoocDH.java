@@ -17,14 +17,14 @@ import java.util.Objects;
  * Created by DELL on 2017/7/27.
  */
 public class ImoocDH {
-    private String src = "imooc security";
+    private String src = "24002";
 
     @Test
     public void jdkDH(){
         try {
             // 1、初始化发送方密钥
             KeyPairGenerator senderKeyGenerator = KeyPairGenerator.getInstance("DH");
-            senderKeyGenerator.initialize(512);
+            senderKeyGenerator.initialize(2048);
             KeyPair senderKeyPair = senderKeyGenerator.generateKeyPair();
             byte[] senderPublicKeyEnc = senderKeyPair.getPublic().getEncoded(); //发送方公钥，发送送接收方
 
