@@ -90,5 +90,7 @@
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-ws-addr:3.1.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-ws-policy:3.1.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.neethi:neethi:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.6" level="project" />
+    <orderEntry type="library" name="Maven: javassist:javassist:3.12.1.GA" level="project" />
   </component>
 </module>
