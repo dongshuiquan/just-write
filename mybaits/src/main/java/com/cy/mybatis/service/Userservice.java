@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.cy.mybatis.beans.UserBean;
 import com.cy.mybatis.mapper.UserMapper;
+import org.junit.*;
 
 public class Userservice {
 
@@ -13,7 +14,7 @@ public class Userservice {
          //insertUser();
 //        deleteUser();
        //selectUserById();
-        selectAllUser();
+
     }
 
 
@@ -71,8 +72,9 @@ public class Userservice {
     /**
      * 查询所有的用户
      */
-    private static void selectAllUser(){
-        SqlSession session= com.cy.mybatis.tools.DBTools.getSession();
+    @org.junit.Test
+    public void selectAllUser(){
+        SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
         UserMapper mapper=session.getMapper(UserMapper.class);
         try {
             List<UserBean> user=mapper.selectAllUser();

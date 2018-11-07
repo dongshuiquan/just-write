@@ -16,6 +16,7 @@ public class DBTools {
             Reader reader = Resources.getResourceAsReader("mybatis.cfg.xml");
             //构建sqlSession的工厂
             sessionFactory = new SqlSessionFactoryBuilder().build(reader);
+            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

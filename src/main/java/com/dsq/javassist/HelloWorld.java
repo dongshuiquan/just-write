@@ -10,5 +10,9 @@ public class HelloWorld {
         System.out.println(123);
         /*new com.dsq.javassist.DecisionDialogUtil();*/
     }
+
+    private void sayHello(int a) {
+        System.out.println("sayHello " + a);
+    }
 }
 
