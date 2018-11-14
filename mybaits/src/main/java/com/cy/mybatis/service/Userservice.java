@@ -21,10 +21,10 @@ public class Userservice {
     /**
      * 新增用户
      */
-    private static void insertUser() {
+    public void insertUser(UserBean user) {
         SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
         UserMapper mapper = session.getMapper(UserMapper.class);
-        UserBean user = new UserBean(1, "懿", "1314520", 7000.0);
+
         try {
             mapper.insertUser(user);
             System.out.println(user.toString());
@@ -39,7 +39,7 @@ public class Userservice {
     /**
      * 删除用户
      */
-    private static void deleteUser(){
+    private void deleteUser(){
         SqlSession session= com.cy.mybatis.tools.DBTools.getSession();
         UserMapper mapper=session.getMapper(UserMapper.class);
         try {
@@ -55,7 +55,7 @@ public class Userservice {
     /**
      * 根据id查询用户
      */
-    private static void selectUserById(){
+    private void selectUserById(){
         SqlSession session= com.cy.mybatis.tools.DBTools.getSession();
         UserMapper mapper=session.getMapper(UserMapper.class);
         try {
@@ -72,7 +72,7 @@ public class Userservice {
     /**
      * 查询所有的用户
      */
-    @org.junit.Test
+
     public void selectAllUser(){
         SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
         UserMapper mapper=session.getMapper(UserMapper.class);
