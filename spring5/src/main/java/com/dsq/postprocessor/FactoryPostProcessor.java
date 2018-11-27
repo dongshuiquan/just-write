@@ -1,4 +1,4 @@
-package postprocessor;
+package com.dsq.postprocessor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ public class FactoryPostProcessor implements BeanFactoryPostProcessor {
 
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory)
 			throws BeansException {
-		logger.info("******������BeanFactoryPostProcessor");
+		logger.info("******BeanFactoryPostProcessor");
 		String[] beanStr = configurableListableBeanFactory.getBeanDefinitionNames();
 		for (String beanName : beanStr) {
 			
@@ -25,8 +25,8 @@ public class FactoryPostProcessor implements BeanFactoryPostProcessor {
 				 BeanDefinition beanDefinition = configurableListableBeanFactory
 	                        .getBeanDefinition(beanName);
 	                MutablePropertyValues m = beanDefinition.getPropertyValues();
-                    m.addPropertyValue("username", "����");
-                    logger.info("�������޸���name���Գ�ʼֵ��");
+                    m.addPropertyValue("username", "lisi");
+                    logger.info("change username");
 			}
 		}
 	}

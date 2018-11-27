@@ -13,8 +13,7 @@ import org.springframework.stereotype.Component;
 public class PrintBeforeAspect {
 
 	private Logger logger = LoggerFactory.getLogger(PrintBeforeAspect.class);
-	
-//	@Pointcut("execution(* com.dsq.*.*.*(..))")
+
 	@Pointcut("execution(public * com.dsq.*.*.print(..))")
 	public void action() {
 		

@@ -4,6 +4,5 @@ public interface UserService {
 	
 	void print(String name);
 
-	
 	void log(String message);
 }

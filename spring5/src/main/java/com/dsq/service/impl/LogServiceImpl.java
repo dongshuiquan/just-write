@@ -18,7 +18,6 @@ public class LogServiceImpl implements LogService{
 	
 	public void log(String message) {
 		logger.info(message);
-		
 	}
 
 }

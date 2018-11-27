@@ -3,6 +3,8 @@ package com.dsq.service;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,14 +23,16 @@ public class UserServiceTest {
 	
 	@Autowired
 	ApplicationContext applicationContext;
-	
+
+	Logger logger = LoggerFactory.getLogger(UserServiceTest.class);
+
 	@BeforeClass
 	public static void beforeClass() {
 	}
 	
 	@Test
 	public void testCount() {
-		System.out.println(applicationContext.getBeanDefinitionCount());
+		logger.info("BeanDefinitionCount : " + applicationContext.getBeanDefinitionCount());
 	}
 	
 	
@@ -39,8 +43,8 @@ public class UserServiceTest {
 	
 	@Test
 	public void getPerson() {
-		System.out.println(applicationContext.getBean(PersonService.class));
-		System.out.println(applicationContext.getBean(Person.class));
+		logger.info("PersonService : " + applicationContext.getBean(PersonService.class));
+		logger.info("Person : " + applicationContext.getBean(Person.class));
 	}
 	
 	@Test

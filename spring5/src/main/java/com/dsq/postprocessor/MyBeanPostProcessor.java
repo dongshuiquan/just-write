@@ -1,5 +1,6 @@
-package postprocessor;
+package com.dsq.postprocessor;
 
+import com.dsq.service.LogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -18,9 +19,9 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		logger.info(beanName + " : " + bean);
+		if(bean instanceof LogService) {
+			throw new RuntimeException();
+		}
 		return bean;
 	}
-
-	
-	
 }

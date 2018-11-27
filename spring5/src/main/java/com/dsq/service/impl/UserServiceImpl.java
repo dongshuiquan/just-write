@@ -34,8 +34,4 @@ public class UserServiceImpl implements UserService{
 		this.username = username;
 	}
 
-
-
-
-	
 }
