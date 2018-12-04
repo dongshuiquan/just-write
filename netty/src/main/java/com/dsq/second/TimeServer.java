@@ -1,4 +1,4 @@
-package com.dsq.test02.issue;
+package com.dsq.second;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -10,8 +10,14 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 
 public class TimeServer {
+
+    public static void main(String[] args) throws Exception {
+        TimeServer server = new TimeServer();
+        server.bind(8080);
+    }
 
     public void bind(int port) throws Exception {
         // NIO线程组
@@ -22,7 +28,6 @@ public class TimeServer {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 1024)
                     .option(ChannelOption.TCP_NODELAY, true)
                     .childHandler(new ChildChannelHandler());
 
@@ -42,6 +47,7 @@ public class TimeServer {
         protected void initChannel(SocketChannel arg0) throws Exception {
             arg0.pipeline().addLast(new LineBasedFrameDecoder(1024));
             arg0.pipeline().addLast(new StringDecoder());
+            arg0.pipeline().addLast(new StringEncoder());
             arg0.pipeline().addLast(new TimeServerHandler());
         }
     }

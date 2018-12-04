@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>simple_tomcat</module>
+
         <module>springmvc</module>
         <module>mybaits</module>
 
@@ -97,11 +97,7 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.6.Final</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -275,6 +271,8 @@
             <artifactId>lucene-highlighter</artifactId>
             <version>7.1.0</version>
         </dependency>
+
+
 
     </dependencies>
 </project>
