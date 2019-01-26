@@ -16,13 +16,13 @@ import java.security.spec.X509EncodedKeySpec;
  */
 public class ImoocECDSA {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    private String src = "imooc security ecdsa";
+    private String src = "24002";
     @Test
     public void jdkECDSA(){
         //1、初始化密钥
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("EC");
-            keyPairGenerator.initialize(256);
+            keyPairGenerator.initialize(112);
             KeyPair keyPair = keyPairGenerator.generateKeyPair();
             ECPublicKey ecPublicKey = (ECPublicKey) keyPair.getPublic();
             ECPrivateKey ecPrivateKey = (ECPrivateKey) keyPair.getPrivate();

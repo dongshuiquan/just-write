@@ -15,7 +15,7 @@ public class MacTest {
 
     @Test
     public void jdkMac() throws Exception {
-        byte[] data = "ABC".getBytes();
+        byte[] data = "24002".getBytes();
         KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacMD5");
         SecretKey secretKey = keyGenerator.generateKey();
         byte[] key = secretKey.getEncoded();

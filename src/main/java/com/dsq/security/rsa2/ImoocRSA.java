@@ -16,7 +16,7 @@ import java.security.spec.X509EncodedKeySpec;
  */
 public class ImoocRSA {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    private String src = "i mooc rsa";
+    private String src = "24002";
     @Test
     public void jdkRSA(){
         //1、初始化密钥

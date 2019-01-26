@@ -17,7 +17,7 @@ import java.security.Security;
  * Created by DELL on 2017/7/10.
  */
 public class ImoocDES {
-    private String src = "imooc security des";
+    private String src = "24002";
 
     @Test
     public void jdkDES(){

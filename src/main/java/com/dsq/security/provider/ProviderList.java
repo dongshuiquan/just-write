@@ -33,7 +33,7 @@ public class ProviderList {
 
     @Test
     public void encodeSHA224() throws NoSuchAlgorithmException {
-        byte[] bytes = "ABC".getBytes();
+        byte[] bytes = "24002".getBytes();
         MessageDigest md = MessageDigest.getInstance("SHA-224");
         md.update(bytes);
         byte[] result = md.digest();
