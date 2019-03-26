@@ -38,5 +38,7 @@ public class ApacheBidiMap {
         // Print count word's pair
         System.out.println(biMap.size());    //print 5
 
+        System.out.println("add git");
+
     }
 }
