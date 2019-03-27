@@ -1,10 +1,5 @@
-package com.collection;
+package com.collection.collection;
 
-
-import org.apache.commons.collections.MultiMap;
-import org.apache.commons.collections.map.MultiValueMap;
-
-import java.util.*;
 
 public class ApacheMultiValueMapLinked {
 

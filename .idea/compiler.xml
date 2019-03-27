@@ -18,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="hadoop" target="1.8" />
+      <module name="javase" target="1.8" />
       <module name="justwriteit" target="1.8" />
       <module name="lucene" target="1.8" />
       <module name="mybaits" target="1.8" />

@@ -1,4 +1,4 @@
-package com.collection;
+package com.collection.collection;
 
 
 import org.apache.commons.collections.MultiMap;

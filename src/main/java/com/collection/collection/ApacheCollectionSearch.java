@@ -1,9 +1,8 @@
-package com.collection;
+package com.collection.collection;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
-import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 
 import java.util.Collection;

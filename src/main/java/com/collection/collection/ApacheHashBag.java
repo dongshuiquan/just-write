@@ -1,22 +1,26 @@
-package com.collection;
+package com.collection.collection;
+
 
 import org.apache.commons.collections.Bag;
-import org.apache.commons.collections.bag.TreeBag;
+import org.apache.commons.collections.bag.HashBag;
 
 import java.util.Arrays;
 
-public class ApacheTreeBag {
+/**
+ *  Hello World using Apache HashBag
+ */
+public class ApacheHashBag {
 
     public static void main(String[] args) {
         // Parse text to separate words
         String INPUT_TEXT = "Hello World! Hello All! Hi World!";
         // Create Multiset
-        Bag bag = new TreeBag(Arrays.asList(INPUT_TEXT.split(" ")));
+        Bag bag = new HashBag(Arrays.asList(INPUT_TEXT.split(" ")));
 
         // Print count words
-        System.out.println(bag); // print [1:All!,2:Hello,1:Hi,2:World!]- in natural (alphabet) order
+        System.out.println(bag); // print [1:Hi,2:Hello,2:World!,1:All!] - in random orders
         // Print all unique words
-        System.out.println(bag.uniqueSet());    // print [All!, Hello, Hi, World!]- in natural (alphabet) order
+        System.out.println(bag.uniqueSet());    // print [Hi, Hello, World!, All!] - in random orders
 
         // Print count occurrences of words
         System.out.println("Hello = " + bag.getCount("Hello"));    // print 2

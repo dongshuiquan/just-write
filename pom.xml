@@ -17,6 +17,7 @@
         <module>hadoop</module>
         <module>netty</module>
         <module>spring5</module>
+        <module>javase</module>
     </modules>
 
     <properties>

@@ -1,4 +1,4 @@
-package com.collection;
+package com.collection.collection;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -9,7 +9,6 @@ import org.junit.Test;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**

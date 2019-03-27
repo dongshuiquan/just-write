@@ -1,24 +1,22 @@
-package com.collection;
+package com.collection.collection;
 
 import org.apache.commons.collections.Bag;
-import org.apache.commons.collections.bag.SynchronizedSortedBag;
 import org.apache.commons.collections.bag.TreeBag;
 
 import java.util.Arrays;
 
-public class ApacheSynchronizedSortedBag {
+public class ApacheTreeBag {
 
     public static void main(String[] args) {
         // Parse text to separate words
         String INPUT_TEXT = "Hello World! Hello All! Hi World!";
         // Create Multiset
-        Bag bag = SynchronizedSortedBag.decorate(new TreeBag(Arrays.asList(INPUT_TEXT.split(" "))));
+        Bag bag = new TreeBag(Arrays.asList(INPUT_TEXT.split(" ")));
 
         // Print count words
         System.out.println(bag); // print [1:All!,2:Hello,1:Hi,2:World!]- in natural (alphabet) order
         // Print all unique words
         System.out.println(bag.uniqueSet());    // print [All!, Hello, Hi, World!]- in natural (alphabet) order
-
 
         // Print count occurrences of words
         System.out.println("Hello = " + bag.getCount("Hello"));    // print 2
