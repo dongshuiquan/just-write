@@ -12,7 +12,7 @@ public class UserserviceTest {
 
     @Test
     public void testInsert() {
-        UserBean user = new UserBean(2, "懿", "1314520", 7000.0);
+        UserBean user = new UserBean("dong", "1314520", 7000.0);
         userservice.insertUser(user);
     }
 

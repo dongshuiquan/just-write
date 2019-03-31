@@ -1,4 +1,3 @@
-import oracle.jdbc.driver.OracleConnection;
 import org.junit.Test;
 
 import java.sql.*;
@@ -11,7 +10,8 @@ public class Test01 {
     @Test
     public void test01() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mapper?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true",
+                "root", "root");
 
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("select 1 from t_user");
@@ -54,7 +54,7 @@ public class Test01 {
             /**
              * 设置连接属性,使得可获取到列的REMARK(备注)
              */
-            ((OracleConnection)conn).setRemarksReporting(true);
+            //((OracleConnection)conn).setRemarksReporting(true);
             DatabaseMetaData dbmd = conn.getMetaData();
             /**
              * 获取可在指定类别中使用的表列的描述。
