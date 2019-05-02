@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="activemq" />
         <module name="demo" />
         <module name="hadoop" />
         <module name="lucene" />
@@ -16,6 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="activemq" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="hadoop" target="1.8" />
       <module name="javase" target="1.8" />
