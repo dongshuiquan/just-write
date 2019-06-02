@@ -62,11 +62,13 @@ public class SolrTest {
 
 
 
+    @Test
     public void addPersonIndex() throws IOException, SolrServerException{
         Person p = new Person();
         p.setId("9");
         p.setName("zhangsan");
         p.setDescription("张三");
+        p.setName2("name2");
         HttpSolrClient solr = new HttpSolrClient(SOLR_URL + solrCore);
         solr.addBean(p);
         solr.commit();
@@ -79,6 +81,7 @@ public class SolrTest {
      * @throws IOException
      * @throws SolrServerException
      */
+    @Test
     public void addDoc() throws SolrServerException, IOException{
         //构造一篇文档
         SolrInputDocument document = new SolrInputDocument();
@@ -97,11 +100,12 @@ public class SolrTest {
     /**
      * 根据id从索引库删除文档
      */
+    @Test
     public void deleteDocumentById() throws Exception {
         //选择具体的某一个solr core
         HttpSolrClient server = new HttpSolrClient(SOLR_URL+solrCore);
         //删除文档
-//        server.deleteById("8");
+        server.deleteById("8");
         //删除所有的索引
         server.deleteByQuery("*:*");
         //提交修改
@@ -113,6 +117,7 @@ public class SolrTest {
      * 查询
      * @throws Exception
      */
+    @Test
     public void querySolr() throws Exception{
         HttpSolrClient solrServer = new HttpSolrClient(SOLR_URL+solrCore);
         SolrQuery query = new SolrQuery();
@@ -129,8 +134,8 @@ public class SolrTest {
         //参数df,给query设置默认搜索域
 //        query.set("df", "name");
 
-        query.setQuery("name:*");
-//        query.setQuery("name:*zhangsan* OR name:*123*" );//name 包含zhangsan或者123
+        //query.setQuery("name:*");
+          query.setQuery("name:*zhangsan* OR name:*123*" );//name 包含zhangsan或者123
 //        query.setQuery("name:*zhangsan* AND description:*zhangsan*" );// name包含且
 
 
