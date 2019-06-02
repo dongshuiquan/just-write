@@ -12,6 +12,7 @@
         <module name="lucene" />
         <module name="mybaits" />
         <module name="netty" />
+        <module name="solr6" />
         <module name="spring5" />
         <module name="springmvc" />
       </profile>
@@ -26,6 +27,7 @@
       <module name="mybaits" target="1.8" />
       <module name="netty" target="1.8" />
       <module name="simple_tomcat" target="1.8" />
+      <module name="solr6" target="1.8" />
       <module name="spring5" target="1.8" />
       <module name="springboot" target="1.8" />
       <module name="springmvc" target="1.8" />
