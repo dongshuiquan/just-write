@@ -14,7 +14,11 @@ public class Person {
     private String name;
 
     @Field
+    private String name2;
+
+    @Field
     private String description;
+
 
 
     public Person() {
@@ -49,6 +53,14 @@ public class Person {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getName2() {
+        return name2;
+    }
+
+    public void setName2(String name2) {
+        this.name2 = name2;
     }
 
     @Override

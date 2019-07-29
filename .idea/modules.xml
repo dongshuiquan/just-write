@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/lucene/lucene.iml" filepath="$PROJECT_DIR$/lucene/lucene.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybaits/mybaits.iml" filepath="$PROJECT_DIR$/mybaits/mybaits.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rockermq/rockermq.iml" filepath="$PROJECT_DIR$/rockermq/rockermq.iml" />
       <module fileurl="file://$PROJECT_DIR$/solr6/solr6.iml" filepath="$PROJECT_DIR$/solr6/solr6.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring5/spring5.iml" filepath="$PROJECT_DIR$/spring5/spring5.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/springmvc/springmvc.iml" />

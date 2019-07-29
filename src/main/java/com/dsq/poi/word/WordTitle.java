@@ -6,10 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.apache.poi.xwpf.usermodel.XWPFStyles;
+import org.apache.poi.xwpf.usermodel.*;
 import org.apache.xmlbeans.XmlException;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTStyles;
 
@@ -24,11 +21,13 @@ public class WordTitle {
      */
     static {
         XWPFDocument template;
+
         try {
             // 读取模板文档
             template = new XWPFDocument(new FileInputStream("C:\\Users\\DELL\\Desktop\\导入.docx"));
             // 获得模板文档的整体样式
             wordStyles = template.getStyle();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
