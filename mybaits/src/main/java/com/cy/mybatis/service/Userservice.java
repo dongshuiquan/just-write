@@ -10,14 +10,6 @@ import org.junit.*;
 
 public class Userservice {
 
-    public static void main(String[] args) {
-         //insertUser();
-//        deleteUser();
-       //selectUserById();
-
-    }
-
-
     /**
      * 新增用户
      */
@@ -39,11 +31,11 @@ public class Userservice {
     /**
      * 删除用户
      */
-    private void deleteUser(){
-        SqlSession session= com.cy.mybatis.tools.DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+    public void deleteUser(int id) {
+        SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
+        UserMapper mapper = session.getMapper(UserMapper.class);
         try {
-            mapper.deleteUser(1);
+            mapper.deleteUser(id);
             session.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,13 +47,11 @@ public class Userservice {
     /**
      * 根据id查询用户
      */
-    private void selectUserById(){
-        SqlSession session= com.cy.mybatis.tools.DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+    public void selectUserById(int id) {
+        SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
+        UserMapper mapper = session.getMapper(UserMapper.class);
         try {
-            UserBean user=    mapper.selectUserById(1);
-            System.out.println(user.toString());
-
+            UserBean user = mapper.selectUserById(id);
             session.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,18 +63,30 @@ public class Userservice {
      * 查询所有的用户
      */
 
-    public void selectAllUser(){
+    public List<UserBean> selectAllUser() {
         SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        List<UserBean> userBeans = null;
         try {
-            List<UserBean> user=mapper.selectAllUser();
-            System.out.println(user.toString());
+            userBeans = mapper.selectAllUser();
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.rollback();
+        }
+        return userBeans;
+    }
+
+    public void update(UserBean user) {
+        SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        try {
+            mapper.updateUser(user);
             session.commit();
         } catch (Exception e) {
             e.printStackTrace();
             session.rollback();
         }
     }
-
 
 }

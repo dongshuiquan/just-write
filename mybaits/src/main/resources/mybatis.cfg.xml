@@ -27,12 +27,20 @@
             <!-- POOLED 表示支持JDBC数据源连接池 -->
             <!-- UNPOOLED 表示不支持数据源连接池 -->
             <!-- JNDI 表示支持外部数据源连接池 -->
-            <dataSource type="com.cy.mybatis.datasource.MybatisDruidDatasource">
+
+           <!-- <dataSource type="com.cy.mybatis.datasource.MybatisDruidDatasource">
+                <property name="driver" value="${jdbc.driverClass}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>-->
+            <dataSource type="POOLED">
                 <property name="driver" value="${jdbc.driverClass}" />
                 <property name="url" value="${jdbc.url}" />
                 <property name="username" value="${jdbc.username}" />
                 <property name="password" value="${jdbc.password}" />
             </dataSource>
+
         </environment>
     </environments>
 
@@ -41,8 +49,10 @@
         <!-- 告知映射文件方式1，一个一个的配置
         <mapper resource="com/cy/mapper/mapper/UserMapper.xml"/>-->
         <!-- 告知映射文件方式2，自动扫描包内的Mapper接口与配置文件 -->
-       <!-- <package name="com/cy/mapper/mapper"/> -->
+        <!--<package name="com/cy/mabatis/mapper/mapper"/>-->
 
         <mapper resource="mapper/UserMapper.xml" />
+
+
     </mappers>
 </configuration>

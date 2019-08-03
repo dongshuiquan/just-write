@@ -10,8 +10,8 @@ public class Test01 {
     @Test
     public void test01() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mapper?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true",
-                "root", "root");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true",
+                "root", "");
 
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("select 1 from t_user");
