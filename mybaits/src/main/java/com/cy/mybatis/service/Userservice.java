@@ -1,6 +1,7 @@
 package com.cy.mybatis.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -87,6 +88,23 @@ public class Userservice {
             e.printStackTrace();
             session.rollback();
         }
+    }
+
+    /**
+     * 根据id查询用户
+     */
+    public Map<String, Object> selectUserMapById(int id) {
+        SqlSession session = com.cy.mybatis.tools.DBTools.getSession();
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        Map<String, Object> user = null;
+        try {
+            user = mapper.selectUserMapById(id);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.rollback();
+        }
+        return user;
     }
 
 }

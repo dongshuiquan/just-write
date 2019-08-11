@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mapper.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.mybatis.mapper.BlogMapper">
+    <!-- 自定义返回结果集 -->
+    <resultMap id="blogMap" type="Blog">
+        <id property="id" column="id" javaType="java.lang.Integer"></id>
+        <result property="title" column="title" javaType="java.lang.String"></result>
+        <result property="content" column="content" javaType="java.lang.String"></result>
+        <result property="state" column="state" javaType="java.lang.String"></result>
+    </resultMap>
+
+
+    <select id="findActiveBlogWithTitleLike1"
+            resultType="Blog">
+        SELECT id, title, content, state FROM BLOG
+        WHERE state = 'ACTIVE'
+        <if test="title!=null">
+            AND title like concat('%',#{title},'%')
+        </if>
+    </select>
+
+    <select id="findActiveBlogWithTitleLike2"
+            resultType="Blog">
+        SELECT id, title, content, state FROM BLOG
+        <where>
+            <if test="state != null">
+                state = #{state}
+            </if>
+            <if test="title != null">
+                AND title like #{title}
+            </if>
+            <if test="author != null and author.name != null">
+                AND author_name like #{author.name}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateBlogIfNessary">
+        update Blog
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null">title=#{title},</if>
+            <if test="state != null">state=#{state},</if>
+            <if test="content != null">content=#{content},</if>
+        </trim>
+        where id=#{id}
+    </update>
+
+    <select id="selectBlogIn"
+            resultType="Blog">
+        SELECT id, title, content, state FROM BLOG
+        WHERE id in
+        <foreach item="item" index="index" collection="ids"
+                 open="(" separator="," close=")">
+            #{item}
+        </foreach>
+
+    </select>
+
+
+    <resultMap id="blogResult" type="Blog">
+        <id property="id" column="id"></id>
+
+        <association property="author" column="author_id" javaType="Author" select="selectAuthor" fetchType="lazy"/>
+
+        <!-- -->
+        <collection property="comments" javaType="ArrayList" column="id" ofType="Comment" select="selectCommentsForBlog" fetchType="lazy"/>
+
+
+    </resultMap>
+
+    <select id="selectBlog" resultMap="blogResult">
+      SELECT * FROM BLOG WHERE ID = #{id}
+    </select>
+
+    <select id="selectAuthor" resultType="Author">
+      SELECT * FROM AUTHOR WHERE ID = #{id}
+    </select>
+
+    <select id="selectCommentsForBlog" resultType="Comment">
+      SELECT * FROM comment WHERE blog_id = #{id}
+    </select>
+
+
+    <resultMap id="blogResult2" type="Blog">
+        <id property="id" column="blog_id" />
+        <result property="title" column="blog_title"/>
+        <result property="content" column="blog_content"/>
+        <result property="state" column="blog_state"/>
+        <association property="author" column="blog_author_id" javaType="Author" resultMap="authorResult2"/>
+
+        <collection property="comments" ofType="Comment" resultMap="blogCommentResult" columnPrefix="comment_"/>
+    </resultMap>
+
+    <resultMap id="authorResult2" type="Author">
+        <id property="id" column="author_id"/>
+        <result property="username" column="author_username"/>
+        <result property="password" column="author_password"/>
+        <result property="email" column="author_email"/>
+        <result property="bio" column="author_bio"/>
+    </resultMap>
+
+    <resultMap id="blogCommentResult" type="Comment">
+        <id property="id" column="id"/>
+        <result property="content" column="content"/>
+    </resultMap>
+
+    <select id="selectBlog2" resultMap="blogResult2">
+      select
+        B.id            as blog_id,
+        B.title         as blog_title,
+        B.content         as blog_content,
+        B.author_id     as blog_author_id,
+        A.id            as author_id,
+        A.username      as author_username,
+        A.password      as author_password,
+        A.email         as author_email,
+        A.bio           as author_bio,
+        C.id            as comment_id,
+        C.content       as comment_content
+      from Blog B left outer join Author A on B.author_id = A.id
+      left join Comment C on C.blog_id = B.id
+      where B.id = #{id}
+    </select>
+
+
+</mapper>

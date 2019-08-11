@@ -7,8 +7,9 @@ package com.cy.mybatis.mapper;
 import com.cy.mybatis.beans.UserBean;
 
         import java.util.List;
+import java.util.Map;
 
-        import com.cy.mybatis.beans.UserBean;
+import com.cy.mybatis.beans.UserBean;
 
 public interface UserMapper {
     /**
@@ -45,4 +46,6 @@ public interface UserMapper {
      * @throws Exception
      */
     public List<UserBean> selectAllUser() throws Exception;
+
+    public Map<String, Object> selectUserMapById(int id) throws Exception;
 }

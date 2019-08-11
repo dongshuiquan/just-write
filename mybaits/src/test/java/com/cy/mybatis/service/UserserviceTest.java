@@ -4,6 +4,7 @@ import com.cy.mybatis.beans.UserBean;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by DELL on 2018/11/7.
@@ -39,6 +40,15 @@ public class UserserviceTest {
 
         userservice.update(userBean);
         getAll();
+    }
+
+    @Test
+    public void get() {
+        Map<String, Object> map = userservice.selectUserMapById(2);
+        System.out.println(map);
+        map.values().forEach((e)->{
+            System.out.println(e + " " + e.getClass());
+        });
     }
 
 }
