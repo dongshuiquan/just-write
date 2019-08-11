@@ -16,24 +16,27 @@ public class CyclicBarrierTest {
         int num = 3;
         CyclicBarrier cyclicBarrier = new CyclicBarrier(num);
 
-        for(int i = 0; i < num; i++) {
-            Thread t = new Thread("t-" + i) {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(new Random().nextInt(5 * 1000));
-                        System.out.println(getName());
-                        int await = cyclicBarrier.await();
-                        System.out.println(getName());
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (BrokenBarrierException e) {
-                        e.printStackTrace();
+        for(int j = 0; j < 2; j++) {
+            for(int i = 0; i < num; i++) {
+                Thread t = new Thread("t-" + i) {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(new Random().nextInt(5 * 1000));
+                            System.out.println(getName());
+                            int await = cyclicBarrier.await();
+                            System.out.println(getName());
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } catch (BrokenBarrierException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-            };
-            t.start();
+                };
+                t.start();
+            }
         }
+
         System.out.println("end");
 
      }
