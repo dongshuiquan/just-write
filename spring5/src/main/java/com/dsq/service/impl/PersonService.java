@@ -17,4 +17,10 @@ public class PersonService implements FactoryBean<Person>{
 		return Person.class;
 	}
 
+	@Override
+	public boolean isSingleton() {
+		return true;
+	}
+
+
 }
